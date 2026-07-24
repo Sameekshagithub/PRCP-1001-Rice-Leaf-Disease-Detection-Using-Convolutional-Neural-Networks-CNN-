@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rice Leaf Disease Detector</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(135deg, #4C8C3B 0%, #EFE6D0 55%, #7A4B2A 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card {
+        background: #FFFFFF;
+        border: 3px solid #4C8C3B;
+        border-radius: 16px;
+        padding: 40px;
+        width: 100%;
+        max-width: 440px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        text-align: center;
+    }
+
+    h1 {
+        color: #2E5A22;
+        font-size: 26px;
+        margin-bottom: 6px;
+    }
+
+    p.subtitle {
+        color: #7A4B2A;
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    .upload-label {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        border: 2px dashed #7A4B2A;
+        border-radius: 8px;
+        background: #F7F3E8;
+        margin-bottom: 16px;
+        color: #7A4B2A;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .upload-label:hover {
+        background: #EFE6D0;
+    }
+
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: transparent;
+    }
+
+    button {
+        background-color: #4C8C3B;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #7A4B2A;
+    }
+
+    .result-box {
+        margin-top: 24px;
+        padding: 16px;
+        background: #F7F3E8;
+        border-left: 5px solid #4C8C3B;
+        border-radius: 8px;
+        text-align: left;
+    }
+
+    .result-box h3 {
+        margin: 0 0 8px 0;
+        color: #2E5A22;
+        font-size: 16px;
+    }
+
+    .result-box p {
+        margin: 4px 0;
+        color: #7A4B2A;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    img.preview {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-top: 16px;
+        border: 2px solid #4C8C3B;
+    }
+
+    footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #999999;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🌾 Rice Leaf Disease Detector</h1>
+    <p class="subtitle">Upload a rice leaf photo to identify the disease</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label class="upload-label" for="leaf_image">
+            <input type="file" id="leaf_image" name="leaf_image" accept="image/*" required>
+        </label>
+        <button type="submit">Predict Disease</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <h3>Prediction Result</h3>
+        <p>Disease: {{ result }}</p>
+        <p>Confidence: {{ confidence }}%</p>
+    </div>
+    {% endif %}
+
+    {% if image_path %}
+    <img class="preview" src="{{ url_for('static', filename=image_path) }}" alt="Uploaded leaf">
+    {% endif %}
+
+    <footer>PRCP-1001 &middot; Rice Leaf Disease Detection (CNN Trained From Scratch)</footer>
+</div>
+
+</body>
+</html>
