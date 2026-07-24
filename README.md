@@ -58,17 +58,17 @@ This project builds an **automated image classification system** using Convoluti
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="assets/class_bacterial_leaf_blight.png" width="100%"><br>
+<img src="assets/bacterial_leaf_blight.png" width="100%"><br>
 <b>Bacterial Leaf Blight</b><br>
 <sub>Caused by <i>Xanthomonas oryzae</i>. Long, pale, water-soaked stripes along the veins.</sub>
 </td>
 <td align="center" width="33%">
-<img src="assets/class_brown_spot.png" width="100%"><br>
+<img src="assets/brown_spot.png" width="100%"><br>
 <b>Brown Spot</b><br>
 <sub>Caused by <i>Bipolaris oryzae</i>. Small, round, brown lesions scattered across the blade.</sub>
 </td>
 <td align="center" width="33%">
-<img src="assets/class_leaf_smut.png" width="100%"><br>
+<img src="assets/leaf_smut.png" width="100%"><br>
 <b>Leaf Smut</b><br>
 <sub>Caused by <i>Entyloma oryzae</i>. Tiny, dense, black angular spots on both surfaces.</sub>
 </td>
