@@ -81,7 +81,6 @@ This project builds an **automated image classification system** using Convoluti
 
 ## 🔄 Project Pipeline
 
-![Pipeline](assets/pipeline_flowchart.png)
 
 1. **Extract** the nested dataset archive (two-stage zip extraction)
 2. **Organize** raw images into clean, uniform class folders
@@ -111,7 +110,6 @@ Before any modelling, the dataset was analyzed to answer four questions:
 
 With only ~84 training images, a CNN can easily memorize the training set instead of learning general disease features. Real-time augmentation solves this by generating realistic, varied versions of each image every epoch.
 
-![Augmentation](assets/augmentation_illustration.png)
 
 | Technique | Parameter | Why |
 |---|---|---|
@@ -131,13 +129,11 @@ With only ~84 training images, a CNN can easily memorize the training set instea
 
 ### Model 1 — Baseline CNN (trained from scratch)
 
-![CNN Architecture](assets/cnn_architecture.png)
 
 A benchmark model: 3 convolution blocks with BatchNorm + MaxPooling, followed by Dense layers with Dropout. Trained entirely from a random initialization — used to demonstrate why transfer learning is necessary on such a small dataset.
 
 ### Models 2 & 3 — Transfer Learning (VGG16 / MobileNetV2)
 
-![Transfer Learning Architecture](assets/transfer_learning_architecture.png)
 
 Both reuse a frozen, ImageNet-pretrained convolutional base and train only a small classification head (`GlobalAveragePooling2D → Dense → Dropout → Softmax`). This lets the model leverage features learned from millions of images instead of learning everything from ~84 training samples.
 
@@ -150,13 +146,8 @@ Both reuse a frozen, ImageNet-pretrained convolutional base and train only a sma
 
 All three models are evaluated on the **same held-out test set** using accuracy, precision, recall, F1-score, parameter count, and training time.
 
-![Model Comparison](assets/model_comparison.png)
-
-![Training Curve Pattern](assets/training_curve_pattern.png)
-
 *Illustrative pattern: a from-scratch CNN typically shows a widening train/validation gap (overfitting), while a frozen transfer-learning model tracks much closer together.*
 
-![Confusion Matrix](assets/confusion_matrix_schematic.png)
 
 ---
 
@@ -188,7 +179,7 @@ All three models are evaluated on the **same held-out test set** using accuracy,
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure(For VS CODE)
 
 ```
 rice-leaf-disease-detection/
