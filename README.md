@@ -179,28 +179,6 @@ All three models are evaluated on the **same held-out test set** using accuracy,
 
 ---
 
-## 📁 Project Structure(For VS CODE)
-
-```
-rice-leaf-disease-detection/
-│
-├── PRCP_1001_Rice_Leaf_Disease_using_CNN.ipynb   # Complete notebook (all tasks)
-├── README.md                                      # This file
-├── assets/                                        # Diagrams used in this README
-│   ├── pipeline_flowchart.png
-│   ├── cnn_architecture.png
-│   ├── transfer_learning_architecture.png
-│   ├── augmentation_illustration.png
-│   ├── training_curve_pattern.png
-│   ├── confusion_matrix_schematic.png
-│   ├── model_comparison.png
-│   └── class_*.png
-├── PRCP-1001-RiceLeaf.zip                         # Raw dataset (place here before running)
-└── requirements.txt                               # Python dependencies
-```
-
----
-
 ## ⚙️ Installation
 
 ```bash
